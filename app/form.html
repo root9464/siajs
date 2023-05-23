@@ -1,0 +1,59 @@
+{% block head %}
+
+<link rel="stylesheet" href="/static/css/form_style.css">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+
+{% endblock %}
+{% block content%}
+<div class="main">
+
+    <div class="container a-container" id="a-container">
+
+        <form class="form" id="a-form" method="post" action="/register">
+          <h2 class="form_title title"> Создайте аккаунт</h2>
+          
+          <span class="form__span">или используйте номер для регистрации</span>
+          <input class="form__input" type="text" placeholder="Name_Surname" name="login">
+          <input class="form__input" type="number" placeholder="PhoneNum" name="number"> <!-- тут ошибка намеренная (найти решение)-->
+          <input class="form__input" type="text" placeholder="id telegram (@id)" name="id">
+          <input class="form__input" type="password" placeholder="Password" name="password">
+          <button class="form__button button" type="submit">Регистрация</button>
+        </form>
+      </div>
+      <!--вход в аккаунт-->
+      <div class="container b-container" id="b-container">
+        <form class="form" id="b-form" method="post" action="/login">
+          <h2 class="form_title title">Войдите в аккаунт</h2>
+          
+        <span class="form__span">используйте gmail для входа в аккаунт</span>
+          <input class="form__input" type="number" placeholder="number" name="number">
+          <input class="form__input" type="password" placeholder="Password" name="password">
+          <a class="form__link">ваш пароль</a>
+          <button class="form__button button" type="submit">Войти</button>
+        </form>
+      </div>
+
+
+
+    <div class="switch" id="switch-cnt">
+    <div class="switch__circle"></div>
+    <div class="switch__circle switch__circle--t"></div>
+    <div class="switch__container" id="switch-c1">
+        <h2 class="switch__title title">С возвращением!</h2>
+        <p class="switch__description description">Если у вас уже создан аккаут, то войдите в систему :) </p>
+        <button class="switch__button button switch-btn">Войти</button>
+    </div>
+    <div class="switch__container is-hidden" id="switch-c2">
+        <h2 class="switch__title title">Здравствуйте !</h2>
+        <p class="switch__description description">Введите свои личные данные и начните работу с нами</p>
+        <button class="switch__button button switch-btn">Регистрация</button>
+    </div>
+    </div>
+</div>
+
+
+
+
+<script  src="/static/form.js"></script>
+{% endblock %}
